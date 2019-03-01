@@ -14,9 +14,9 @@ Any faster and database becomes locked due to concurrency issues
 that in turn throw errors and lock/crash the code.
 
 ## Bottom line:
-This could work, but it would be slow.
+This works, but it is slow and will more than likely cause a performance bottleneck.
 
 There may be better SQL database options - apparently, sqlite3 is not meant for 'fast action'.
 
-However it was an easy option to create a proof of concept since it is packaged
+However, it was an easy option to create a proof of concept since it is packaged
 with both Python 3 and Ironpython 32bit.
