@@ -11,3 +11,5 @@ Still does a lot of writing to disk, but may be slightly easier than an AMQP onl
 
 ## Bottom line:
 I think this is the way to go forward with the desired project communication.
+
+However, some thought should be given the purely AMQP method before committing.
