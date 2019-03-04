@@ -5,6 +5,7 @@ import sqlite3
 import datetime
 import subprocess
 import signal
+import time
 
 from AMQPAgent import AMQPAgent
 
@@ -60,7 +61,7 @@ py3 = AMQPAgent('PY3', host, [0,'init','time'])
 # start outside process
 cmd = "ipy ipyScript.py " + dbName + ' ' + str(limit) 
 ipyProc = subprocess.Popen(cmd)
-
+start = time.time()
 runFlag = 1
 while runFlag:
     # create and send message to IPY
@@ -107,6 +108,8 @@ print('PY3 Finished!')
 # close other script for sure
 ipyProc.send_signal(signal.SIGTERM)
 print('IPY Terminated')
+end =time.time()
+print('Elapsed time =  %f' % (end-start))
 
 """
 Results:
